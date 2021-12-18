@@ -525,7 +525,7 @@ async function run() {
     page.goto('https://splinterlands.io/');
     page.recoverStatus = 0;
     page.favouriteDeck = process.env.FAVOURITE_DECK || '';
-    while (start) {
+    // while (start) {
         console.log('Recover Status: ', page.recoverStatus)
         if(!process.env.API) {
             console.log(chalk.bold.redBright.bgBlack('Dont pay scammers!'));
@@ -549,10 +549,11 @@ async function run() {
                 console.log(e);
                 start = false;
             })
-    }
-    if (!isMultiAccountMode) {
-        await restart(browser);
-    }
+    // }
+    // if (!isMultiAccountMode) {
+    //     await restart(browser);
+    // }
+    console.log('END ', process.env.ACCOUNT, new Date().toLocaleString())
 }
 
 async function closeBrowser(browser) {
